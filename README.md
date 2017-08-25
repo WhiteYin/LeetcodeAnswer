@@ -45,3 +45,52 @@ Output:
 5. 将数组的值与数组的索引对应，灯的开与关的状态用数组值的正负表示即可。<br/>
 **注意：所有值都是从1开始，而数组索引从0开始。**
 ***
+<h3>485. Max Consecutive Ones </h3>
+<p>2017-8-25 11:55</p>
+
+Decription:<br/>
+Given a binary array, find the maximum number of consecutive 1s in this array.
+
+Example:
+<pre>
+Input: [1,1,0,1,1,1]
+Output: 3
+Explanation: The first two digits or the last three digits are consecutive 1s.
+    The maximum number of consecutive 1s is 3.
+</pre>
+
+解题思路：
+1. 需要一个计数器和最大值的记录；
+2. 遍历二进制数组需要进行判断，对计数器赋值；
+3. 使用逻辑操作对计数器赋值；
+4. <table>
+  <caption>逻辑表</caption>
+  <tr>
+    <th>count</th>
+    <th>num[1]</th>
+    <th>result</th>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>1</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>!0</td>
+    <td>0</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>!0</td>
+    <td>1</td>
+    <td>count++</td>
+  </tr>
+</table>
+5.在赋值后比较最大值与计数器的大小，将max（）赋给最大值记录器，返回即可。
+
+***
