@@ -63,7 +63,7 @@ Explanation: The first two digits or the last three digits are consecutive 1s.
 1. 需要一个计数器和最大值的记录；
 2. 遍历二进制数组需要进行判断，对计数器赋值；
 3. 使用逻辑操作对计数器赋值；
-4.在赋值后比较最大值与计数器的大小，将max（）赋给最大值记录器，返回即可。
+4. 在赋值后比较最大值与计数器的大小，将max（）赋给最大值记录器，返回即可。
 5. <table>
   <caption>逻辑表</caption>
   <tr>
