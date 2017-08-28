@@ -63,9 +63,9 @@ Explanation: The first two digits or the last three digits are consecutive 1s.
 1. 需要一个计数器和最大值的记录；
 2. 遍历二进制数组需要进行判断，对计数器赋值；
 3. 使用逻辑操作对计数器赋值；
-4. 在赋值后比较最大值与计数器的大小，将max（）赋给最大值记录器，返回即可。
-5. <table>
-  <caption>逻辑表</caption>
+4. 在赋值后比较最大值与计数器的大小，将max（）赋给最大值记录器，返回即可。<br/>
+*逻辑表*
+<table>
   <tr>
     <th>count</th>
     <th>num[1]</th>
@@ -94,4 +94,41 @@ Explanation: The first two digits or the last three digits are consecutive 1s.
 </table>
 
 *总结：题目做完一定要自己手动测一遍，而不是run code看结果，这样习惯很不好。
+***
+
+<h3>495. Teemo Attacking </h3>
+<p>2017-8-28 11:28</p>
+
+Decription:<br/>
+In LOL world, there is a hero called Teemo and his attacking can make his enemy Ashe be in poisoned condition. Now, given the Teemo's attacking ascending time series towards Ashe and the poisoning time duration per Teemo's attacking, you need to output the total time that Ashe is in poisoned condition.
+
+You may assume that Teemo attacks at the very beginning of a specific time point, and makes Ashe be in poisoned condition immediately.
+
+Example1:
+<pre>
+Input: [1,4], 2
+Output: 4
+Explanation: At time point 1, Teemo starts attacking Ashe and makes Ashe be poisoned immediately. 
+This poisoned status will last 2 seconds until the end of time point 2. 
+And at time point 4, Teemo attacks Ashe again, and causes Ashe to be in poisoned status for another 2 seconds. 
+So you finally need to output 4.
+</pre>
+
+Example2:
+<pre>
+Input: [1,2], 2
+Output: 3
+Explanation: At time point 1, Teemo starts attacking Ashe and makes Ashe be poisoned. 
+This poisoned status will last 2 seconds until the end of time point 2. 
+However, at the beginning of time point 2, Teemo attacks Ashe again who is already in poisoned status. 
+Since the poisoned status won't add up together, though the second poisoning attack will still work at time point 2, it will stop at the end of time point 3. 
+So you finally need to output 3.
+</pre>
+
+解题思路：<br/>
+　　本来我是想用递归做的，但是因为给定的参数只有２个，所以用迭代了。
+1. 迭代函数需要3个参数：前一个时间点、下一个时间点和中毒间隔，还需要一个计算出的中毒消失时间点；<br/>
+2. 通过分类讨论，可以分成2种情况：下一个时间点艾希仍处于中毒中和艾希脱离中毒，然后分别计算出增加的中毒时间返回给原函数即可。<br/>
+
+*注意:测试的数据中有一个很坑的地方，就是会传一个空数组。你这空数组有什么意思啊？提莫不攻击的咯？*
 ***
