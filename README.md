@@ -132,3 +132,22 @@ So you finally need to output 3.
 
 *注意:测试的数据中有一个很坑的地方，就是会传一个空数组。你这空数组有什么意思啊？提莫不攻击的咯？*
 ***
+<h3>448. Find All Numbers Disappeared in an Array </h3>
+<p>2017-8-29 15：54</p>
+
+<strong>Decription:</strong><br/>
+Given an array of integers where 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.
+Find all the elements of [1, n] inclusive that do not appear in this array.
+Could you do it without extra space and in O(n) runtime? You may assume the returned list does not count as extra space.
+
+<strong>Example:</strong>
+<pre>
+Input:
+[4,3,2,7,8,2,3,1]
+
+Output:
+[5,6]
+</pre>
+
+解题思路：
+思路和no.442一样，但是要标记出现0次和出现2次，需要修改标志。具体怎么标识看个人想法，我是从第二次出现开始就减去数组长度，这种情况要注意在取值当索引时应该进行模运算。
