@@ -1,0 +1,30 @@
+{
+  "name": "leetcodeanswer",
+  "version": "1.0.0",
+  "description": "leetcode答案",
+  "main": "README.md",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WhiteYin/LeetcodeAnswer.git"
+  },
+  "keywords": [
+    "leetcode",
+    "javascript"
+  ],
+  "author": "whiteyin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WhiteYin/LeetcodeAnswer/issues"
+  },
+  "homepage": "https://github.com/WhiteYin/LeetcodeAnswer#readme",
+  "devDependencies": {
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}
