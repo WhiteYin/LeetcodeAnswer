@@ -1,8 +1,11 @@
 {
   "name": "leetcodeanswer",
   "version": "1.0.0",
-  "description": "leetcode答案",
-  "main": "README.md",
+  "description": "leetcode习题答案记录，主要是数组和字符串操作。按问题编号排序，解析在issues中。",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,23 +13,14 @@
     "type": "git",
     "url": "git+https://github.com/WhiteYin/LeetcodeAnswer.git"
   },
-  "keywords": [
-    "leetcode",
-    "javascript"
-  ],
-  "author": "whiteyin",
+  "author": "white yin",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/WhiteYin/LeetcodeAnswer/issues"
   },
   "homepage": "https://github.com/WhiteYin/LeetcodeAnswer#readme",
   "devDependencies": {
-    "eslint": "^4.12.1",
-    "eslint-config-google": "^0.9.1",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "eslint": "^4.15.0",
+    "jest": "^22.1.1"
   }
 }

@@ -30,7 +30,7 @@ var islandPerimeter = function(grid) {
                         sum++;
                     }
                 } catch (err) {
-                    
+                    console.log(err);
                 }
             }
         }
