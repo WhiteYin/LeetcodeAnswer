@@ -9,3 +9,5 @@ var singleNumber = function (nums) {
     }
     return result;
 };
+
+module.exports = singleNumber;

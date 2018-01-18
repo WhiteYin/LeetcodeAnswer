@@ -23,7 +23,7 @@
         ],
         "no-console":[
             "error",
-            {"allow":["log"]}
+            {"allow":["log","table"]}
         ]
     }
 }
