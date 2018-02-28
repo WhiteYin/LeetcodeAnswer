@@ -1,4 +1,4 @@
-const middlePermutation = require("../src/simple-fun-number-159-middle-permutation");
+const middlePermutation = require("../src/codewars/simple-fun-number-159-middle-permutation");
 test("空串", function () {
     expect(middlePermutation("")).toBe("");
 });

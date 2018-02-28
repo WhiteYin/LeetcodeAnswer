@@ -1,4 +1,4 @@
-const getDartboardScore = require("../src/let's_play_darts");
+const getDartboardScore = require("../src/codewars/let's_play_darts");
 
 test("脱靶", function () {
     expect(getDartboardScore(-133.69, -147.38)).toBe("X");

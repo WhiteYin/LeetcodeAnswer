@@ -1,4 +1,4 @@
-const solve = require("../src/simple_frequency_sort");
+const solve = require("../src/codewars/simple_frequency_sort");
 
 test("1", function () {
     expect(solve([2, 3, 5, 3, 7, 9, 5, 3, 7])).toEqual([3, 3, 3, 5, 5, 7, 7, 2, 9]);

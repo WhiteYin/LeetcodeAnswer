@@ -1,4 +1,4 @@
-const febonacci = require("../src/fibonacci");
+const febonacci = require("../src/codewars/fibonacci");
 
 test("使用递归", function () {
     expect(febonacci.fibonacciRecursion(5)).toBe(5);

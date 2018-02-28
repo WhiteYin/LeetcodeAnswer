@@ -1,4 +1,4 @@
-const badApples = require('../src/bad_apples');
+const badApples = require('../src/codewars/bad_apples');
 test("测试坏苹果1", function () {
     expect(badApples([])).toEqual([]);
 });

@@ -1,4 +1,4 @@
-const orderWeight = require("../src/weight_for_weight");
+const orderWeight = require("../src/codewars/weight_for_weight");
 
 test("测试1", function () {
     expect(orderWeight("103 123 4444 99 2000")).toBe("2000 103 123 4444 99");

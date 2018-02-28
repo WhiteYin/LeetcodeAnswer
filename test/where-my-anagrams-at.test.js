@@ -1,4 +1,4 @@
-const anagrams = require("../src/where-my-anagrams-at");
+const anagrams = require("../src/codewars/where-my-anagrams-at");
 
 test("测试1", function () {
     expect(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada'])).toEqual(['aabb', 'bbaa']);
