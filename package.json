@@ -21,6 +21,7 @@
   "homepage": "https://github.com/WhiteYin/LeetcodeAnswer#readme",
   "devDependencies": {
     "eslint": "^4.15.0",
+    "eslint-config-nzcl": "^1.0.2",
     "jest": "^22.1.1"
   },
   "dependencies": {}
