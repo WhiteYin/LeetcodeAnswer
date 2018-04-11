@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/WhiteYin/LeetcodeAnswer#readme",
   "devDependencies": {
+    "decimal.js": "^10.0.0",
     "eslint": "^4.15.0",
     "eslint-config-nzcl": "^1.0.2",
     "jest": "^22.1.1"
