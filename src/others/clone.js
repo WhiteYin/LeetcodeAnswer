@@ -37,13 +37,17 @@ function record(oldObj, newObj) {
  * 2. 对于Array、Object类型需要递归调用
  */
 function tranverse(obj) {
-    // 如果不是对象则返回原变量
-    if (Object.prototype.toString.call(obj) !== '[object Object]') {
+    // 如果不是对象或数组则返回原变量
+    if ((Object.prototype.toString.call(obj) !== '[object Object]') && !Array.isArray(obj)) {
         return obj;
     }
 
     // 目标对象
     const newObj = {};
+    // 如果是数组则需复制其length属性，否则Array.from方法无法将其转换成数组
+    if (Array.isArray(obj)) {
+        newObj.length = obj.length;
+    }
     // 源对象的键
     const keys = Object.keys(obj);
     // 记录当前复制的对象
@@ -62,7 +66,16 @@ function tranverse(obj) {
         // 如果为数组
         else if (Array.isArray(value)) {
             // TODO: 如果数组项为对象？
-            newObj[key] = value.map((item) => item);
+            const checked = check(value);
+            // 如果已经遍历过了
+            if (checked) {
+                newObj[key] = checked;
+            }
+            // 否则进行递归遍历
+            else {
+                const newArray = tranverse(value);
+                newObj[key] = Array.from(newArray);
+            }
         }
         // 如果是Date或Math等对象
         else if (Object.prototype.toString.call(value) !== '[object Object]') {
@@ -101,11 +114,13 @@ const childObj = {
     i: 1,
     j: false
 };
+testObj.f.push(childObj);
 testObj.g = testObj;
 testObj.k = childObj;
 testObj.l = childObj;
 
 const newObj = tranverse(testObj);
+newObj.f[3].i = 0;
 newObj.f.push(4);
 newObj.g.m = 123;
 childObj.i = 2;
