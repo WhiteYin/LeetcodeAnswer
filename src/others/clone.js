@@ -43,11 +43,7 @@ function tranverse(obj) {
     }
 
     // 目标对象
-    const newObj = {};
-    // 如果是数组则需复制其length属性，否则Array.from方法无法将其转换成数组
-    if (Array.isArray(obj)) {
-        newObj.length = obj.length;
-    }
+    const newObj = obj;
     // 源对象的键
     const keys = Object.keys(obj);
     // 记录当前复制的对象
@@ -73,8 +69,7 @@ function tranverse(obj) {
             }
             // 否则进行递归遍历
             else {
-                const newArray = tranverse(value);
-                newObj[key] = Array.from(newArray);
+                newObj[key] = tranverse(value);
             }
         }
         // 如果是Date或Math等对象
@@ -94,11 +89,19 @@ function tranverse(obj) {
             }
         }
     }
-    return newObj;
+    // 如果是数组则需复制其length属性，否则Array.from方法无法将其转换成数组
+    if (Array.isArray(obj)) {
+        newObj.length = obj.length;
+        return Array.from(newObj);
+    }
+    else {
+        return newObj;
+    }
 }
 
 module.exports = tranverse;
 
+// 深拷贝对象
 const testObj = {
     a: 'a',
     b: '1',
@@ -127,3 +130,22 @@ childObj.i = 2;
 
 testObj;
 newObj;
+
+// 深拷贝数组
+const array = [1, 2, 3];
+const newArray = tranverse(array);
+newArray[1] = 4;
+newArray;
+
+// 测试继承
+function SuperObject() {
+    this.name = 'test';
+    this.info = {
+        sex: 'male'
+    };
+}
+
+const subObject = new SuperObject();
+const cloneObject = tranverse(subObject);
+console.error('是否为子类：', cloneObject instanceof SuperObject);
+// TODO: 继承失败
